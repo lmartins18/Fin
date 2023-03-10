@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace fin.Models.Concrete;
 
-namespace fin;
-
-public partial class Category
+public partial class Category: BaseModel
 {
     public int Id { get; set; }
 

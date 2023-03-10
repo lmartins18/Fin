@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace fin.Models.Concrete;
 
-namespace fin;
-
-public partial class Goal
+public partial class Goal: BaseModel
 {
     public int Id { get; set; }
 

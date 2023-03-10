@@ -1,15 +1,13 @@
-using System.Reflection;
-using System.Security.Claims;
-using System.Text;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using fin.DataAccess.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add context
-
+builder.Services.AddTransient(typeof(AccountsRepository));
 // Add services to the container.
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using fin.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace fin;
 

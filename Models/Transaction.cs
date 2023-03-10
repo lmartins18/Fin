@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace fin;
-
-public partial class Transaction
+﻿namespace fin.Models.Concrete;
+public partial class Transaction: BaseModel
 {
     public int Id { get; set; }
 

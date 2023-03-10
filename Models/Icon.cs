@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace fin;
-
-public partial class Icon
+﻿namespace fin.Models.Concrete;
+public partial class Icon: BaseModel
 {
     public int Id { get; set; }
 
