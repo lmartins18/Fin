@@ -1,10 +1,16 @@
-using System.Diagnostics;
-using fin.DataAccess.Concrete;
+global using fin;
+global using System.Linq.Expressions;
+global using fin.Models;
+global using fin.Models.Concrete;
+using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add context
-builder.Services.AddTransient(typeof(AccountsRepository));
+builder.Services.AddDbContext<FinContext>(options =>
+            options.UseNpgsql(builder.Configuration.GetConnectionString("finPsql")));
 // Add services to the container.
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 

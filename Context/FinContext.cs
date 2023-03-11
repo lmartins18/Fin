@@ -1,4 +1,5 @@
 ﻿using fin.Models;
+using fin.Models.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 namespace fin;
