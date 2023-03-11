@@ -19,7 +19,11 @@ builder.Services.AddDbContext<FinContext>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-builder.Services.AddTransient(typeof(AccountService));
+builder.Services.AddTransient(typeof(AccountsService));
+builder.Services.AddTransient(typeof(IconsService));
+builder.Services.AddTransient(typeof(GoalsService));
+builder.Services.AddTransient(typeof(CategoriesService));
+builder.Services.AddTransient(typeof(TransactionsService));
 var config = new MapperConfiguration(cfg =>
 {
     cfg.AddProfile(new AutoMapperProfile());

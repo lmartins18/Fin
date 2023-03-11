@@ -4,6 +4,10 @@ public class UnitOfWork : IUnitOfWork
     private readonly FinContext _context;
     private readonly ILogger _logger;
     public IAccountsRepository Accounts { get; private set; }
+    public IIconsRepository Icons { get; private set; }
+    public ITransactionsRepository Transactions { get; private set; }
+    public IGoalsRepository Goals { get; private set; }
+    public ICategoriesRepository Categories { get; private set; }
 
     public UnitOfWork(FinContext context, ILoggerFactory logger)
     {

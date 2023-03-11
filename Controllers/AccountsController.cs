@@ -6,16 +6,16 @@ namespace fin.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class Accounts : ControllerBase
+    public class AccountsController : ControllerBase
     {
-        private readonly AccountService _accountService;
+        private readonly AccountsService _accountService;
 
-        public Accounts(AccountService accountService)
+        public AccountsController(AccountsService accountService)
         {
             _accountService = accountService;
         }
         [HttpPost]
-        public async Task<IActionResult> AddAccount(AccountDto account) 
+        public async Task<IActionResult> AddAccount(AccountDTO account) 
         => await _accountService.InsertAsync(account) ? Ok() : BadRequest();
     }
 }

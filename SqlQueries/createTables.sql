@@ -11,14 +11,14 @@ CREATE TABLE accounts (
   name VARCHAR(20),
   balance DECIMAL,
   category_id INTEGER REFERENCES categories(id),
-  icon INTEGER REFERENCES icons(id)
+  icon_id INTEGER REFERENCES icons(id)
 );
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
   name VARCHAR(20),
   amount DECIMAL,
   account_id INTEGER REFERENCES accounts(id),
-  credit BOOLEAN,
+  is_credit BOOLEAN,
   category_id INTEGER REFERENCES categories(id),
   date TIMESTAMP
 );

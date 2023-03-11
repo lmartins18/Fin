@@ -3,24 +3,24 @@ using fin.DataAccess.Repositories;
 using fin.DTOS;
 
 namespace fin.DataAccess.Services.Concrete;
-public class AccountService
+public class AccountsService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
-    public AccountService(IUnitOfWork unitOfWork, IMapper mapper)
+    public AccountsService(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<AccountDto>> GetaccountAsync()
+    public async Task<IEnumerable<AccountDTO>> GetaccountAsync()
     {
         var accounts = await _unitOfWork.Accounts.GetAll();
 
-        return _mapper.Map<IEnumerable<AccountDto>>(accounts);
+        return _mapper.Map<IEnumerable<AccountDTO>>(accounts);
     }
 
-    public async Task<bool> InsertAsync(AccountDto AccountDto)
+    public async Task<bool> InsertAsync(AccountDTO AccountDto)
     {
         var account = _mapper.Map<Account>(AccountDto);
         return await _unitOfWork.Accounts.Add(account);
