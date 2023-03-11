@@ -1,4 +1,4 @@
-namespace fin.DataAccess;
+namespace fin.DataAccess.Repositories;
 public interface IUnitOfWork : IDisposable
 {
     IAccountsRepository Accounts { get; }

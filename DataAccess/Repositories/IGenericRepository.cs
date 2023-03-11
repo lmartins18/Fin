@@ -1,7 +1,4 @@
-using System.Linq.Expressions;
-using fin.Models;
-
-namespace fin.DataAccess;
+namespace fin.DataAccess.Repositories;
 public interface IGenericRepository<T> where T : BaseModel
 {
     Task<T?> GetById(Guid id);

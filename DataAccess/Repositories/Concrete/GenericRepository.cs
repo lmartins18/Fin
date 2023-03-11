@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace fin.DataAccess.Concrete;
+namespace fin.DataAccess.Repositories.Concrete;
 public class GenericRepository<T> : IGenericRepository<T> where T : BaseModel
 {
     protected FinContext _context;

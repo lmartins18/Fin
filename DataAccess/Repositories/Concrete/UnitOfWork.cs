@@ -1,4 +1,4 @@
-namespace fin.DataAccess.Concrete;
+namespace fin.DataAccess.Repositories.Concrete;
 public class UnitOfWork : IUnitOfWork
 {
     private readonly FinContext _context;

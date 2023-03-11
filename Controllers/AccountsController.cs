@@ -1,3 +1,5 @@
+using fin.DataAccess.Services.Concrete;
+using fin.DTOS;
 using Microsoft.AspNetCore.Mvc;
 
 namespace fin.Controllers
@@ -6,9 +8,14 @@ namespace fin.Controllers
     [Route("api/[controller]")]
     public class Accounts : ControllerBase
     {
-        public Accounts()
+        private readonly AccountService _accountService;
+
+        public Accounts(AccountService accountService)
         {
-            
+            _accountService = accountService;
         }
+        [HttpPost]
+        public async Task<IActionResult> AddAccount(AccountDto account) 
+        => await _accountService.InsertAsync(account) ? Ok() : BadRequest();
     }
 }
