@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body,
+    #root {
+        @apply h-full w-full font-marcellus
+    }
+  }
+  @layer components {
+    .side-nav-account {
+        @apply flex w-full gap-3 text-xl cursor-pointer p-2 hover:bg-sky-900 [&>svg]:hover:text-sky-100 [&>svg]:text-sky-200 rounded-lg;
+    }
+  }
